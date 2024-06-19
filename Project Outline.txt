@@ -1,0 +1,15 @@
+# Cloud-based Microservices Application
+
+## Core Microservices
+- **Booking Service:**
+  - Manages customer flight bookings
+  - Handles seat selection and reservation status
+- **Payment Service (Simulated):**
+  - Simulates payment processing logic
+  - Manages payment methods and transaction records (mock data)
+- **Notification Service:**
+  - Sends booking confirmations and updates to customers
+  - Handles email and SMS notifications
+- **Flight Management Service:**
+  - Manages flight schedules, availability, and cancellations
+  - Updates flight status in real-time
