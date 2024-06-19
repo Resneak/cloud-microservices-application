@@ -1,0 +1,7 @@
+1. Client sends JSON data to create a booking.
+2. FastAPI validates and converts the JSON data into a Pydantic model instance.
+3. The Pydantic model instance is converted to a dictionary to create a SQLAlchemy model instance.
+4. The SQLAlchemy model instance is added to the database and committed.
+5. The db_booking instance is refreshed to include the newly generated id.
+6. The db_booking instance is returned from the CRUD function.
+7. FastAPI serializes the db_booking instance into JSON using the Pydantic response model and sends it to the client.

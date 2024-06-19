@@ -3,9 +3,10 @@
 # Define endpoints for the booking service.
 
 
+import crud, models, schemas, database
+from database import engine
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
-from . import crud, models, schemas, database
 
 # Create the database tables
 models.Base.metadata.create_all(bind=database.engine)
@@ -20,7 +21,7 @@ def read_root():
 # Create a new booking
 @app.post("/bookings/", response_model=schemas.Booking)
 def create_booking(booking: schemas.BookingCreate, db: Session = Depends(database.get_db)): # type hints to help with errors
-    return crud.create_booking(db=db, booking=booking)
+    return crud.create_booking(db=db, booking=booking) # creates a new booking record in the database
 
 # Read a booking by ID
 @app.get("/bookings/{booking_id}", response_model=schemas.Booking)
