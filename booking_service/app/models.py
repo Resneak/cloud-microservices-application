@@ -5,9 +5,10 @@
 # Define the Booking model representing the bookings table.
 
 
-from sqlalchemy import Column, Integer, String, create_engine
+from sqlalchemy import Column, Integer, String, create_engine, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from database import Base
 
 # Database connection URL
 SQLALCHEMY_DATABASE_URL = "sqlite:///./test.db"
@@ -25,3 +26,5 @@ class Booking(Base):
     customer_name = Column(String, index=True)
     flight_number = Column(String, index=True)
     seat_number = Column(String, index=True)
+    flight_id = Column(Integer, index=True)
+    booking_time = Column(DateTime, index=True)  # Adding booking_time field
